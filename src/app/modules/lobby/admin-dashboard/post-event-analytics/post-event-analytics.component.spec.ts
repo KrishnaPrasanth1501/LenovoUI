@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PostEventAnalyticsComponent } from './post-event-analytics.component';
 
 describe('PostEventAnalyticsComponent', () => {
