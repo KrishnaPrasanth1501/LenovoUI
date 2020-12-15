@@ -6,9 +6,19 @@ import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 
 
 const routes: Routes = [
-  { path: '',component:UserAuthComponent},
-  
-  
+  {
+    path:'',
+    redirectTo:'adminSignin',
+    pathMatch:'full'
+  },
+  { 
+    path: 'userSignin',
+    component:UserAuthComponent
+  },
+  { 
+    path:'adminSignin',
+    component:AdminAuthComponent
+  }
 ];
 @NgModule({
   declarations: [],

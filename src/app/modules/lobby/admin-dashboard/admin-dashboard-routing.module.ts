@@ -5,14 +5,33 @@ import { RouterModule, Routes } from '@angular/router';
 import { LiveUsersComponent } from './live-users/live-users.component';
 import { PostEventAnalyticsComponent } from './post-event-analytics/post-event-analytics.component';
 import { UserBasedAnalyticsComponent } from './user-based-analytics/user-based-analytics.component';
+import { AuthGuard } from 'src/app/services/auth.guard';
 const routes: Routes = [
-  {path:'',redirectTo:'liveUsers',pathMatch:'full'},
-  {path:'liveUsers',component:LiveUsersComponent},
-  {path:'postevents',component:PostEventAnalyticsComponent},
-  {path:'userbased',component:UserBasedAnalyticsComponent},
-  // {path:'signin',loadChildren : ()=>import('./modules/auth/auth.module').then(m=>m.AuthModule)},
-  // {path:'dashboard',loadChildren:()=>import('./modules/lobby/admin-dashboard/admin-dashboard.module').then(m=>m.AdminDashboardModule)},
-  {path:'**',component:PageNotFoundComponent}
+  {
+    path:'',
+    redirectTo:'liveUsers',
+    pathMatch:'full'
+  },
+  {
+  path:'liveUsers',
+  component:LiveUsersComponent,
+  canActivate:[AuthGuard]
+  },
+  {
+    path:'postevents',
+    component:PostEventAnalyticsComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'userbased',
+    component:UserBasedAnalyticsComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'**',
+    component:PageNotFoundComponent,
+    canActivate:[AuthGuard]
+  }
 ];
 
 
