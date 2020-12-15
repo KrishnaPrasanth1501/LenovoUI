@@ -6,6 +6,7 @@ import { PostEventAnalyticsComponent } from './post-event-analytics/post-event-a
 import { UserBasedAnalyticsComponent } from './user-based-analytics/user-based-analytics.component';
 import { ListOfCountriesComponent } from './list-of-countries/list-of-countries.component';
 import { SideNavComponent } from './common/side-nav/side-nav.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { SideNavComponent } from './common/side-nav/side-nav.component';
   declarations: [LiveUsersComponent, PostEventAnalyticsComponent, UserBasedAnalyticsComponent, ListOfCountriesComponent, SideNavComponent],
   imports: [
     CommonModule,
-    AdminDashboardRoutingModule
+    AdminDashboardRoutingModule,
+    FormsModule
   ],
   exports:[SideNavComponent]
 })

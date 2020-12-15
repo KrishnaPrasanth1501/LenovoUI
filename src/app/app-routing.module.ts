@@ -8,7 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {path:'',redirectTo:'signin',pathMatch:'full'},
   {path:'signin',loadChildren : ()=>import('./modules/auth/auth.module').then(m=>m.AuthModule)},
-  {path:'dashboard',component:ListOfCountriesComponent},
+  {path:'dashboard',loadChildren:()=>import('./modules/lobby/admin-dashboard/admin-dashboard.module').then(m=>m.AdminDashboardModule)},
   {path:'**',component:PageNotFoundComponent}
 ];
 
