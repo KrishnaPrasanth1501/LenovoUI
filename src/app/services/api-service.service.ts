@@ -20,12 +20,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-
-  getWithoutLoader(url): Observable<any> {
-    return this.http.get(url);
-  }
-
-  post(url, data): Observable<any> {
+  post(url: string, data: any): Observable<any> {
   //  let token = localStorage.getItem('token');
   //   const httpOptions = {
   //     headers: new HttpHeaders({
@@ -35,36 +30,26 @@ export class ApiService {
     return this.http.post(url, data);
   }
 
-  loginpost(url, data): Observable<any> {
-    return this.http.post(url, data);
-  }
+  get(url: string): Observable<any> {
 
-  get(url): Observable<any> {
-    // this.loader.show();
-    return this.http
-      .get(url)
-      .map(res => {
-        // this.loader.hide();
-        return res;
-      })
-    //.catch(res => Observable.throw(this.handleErr(res))
-    //)
+    return this.http.get(url);
+    
   }
-  handleErr(err: any) {
-    // this.loader.hide();
-    return err;
-  }
+  // handleErr(err: any) {
+  //   // this.loader.hide();
+  //   return err;
+  // }
   //preview data
-  get_previewdata(previewUrl): Observable<any> {
-    return this.http
-      .get(previewUrl)
-      .map(res => {
-        // this.loader.hide();
-        return res;
-      })
-      .catch(res => Observable.throw(this.handleErr(res))
-      )
-  }
+  // get_previewdata(previewUrl: string): Observable<any> {
+  //   return this.http
+  //     .get(previewUrl)
+  //     .map((res: any) => {
+  //       // this.loader.hide();
+  //       return res;
+  //     })
+  //     .catch((res: any) => Observable.throw(this.handleErr(res))
+  //     )
+  // }
 
 
 }
