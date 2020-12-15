@@ -6,7 +6,7 @@ import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 
 
 const routes: Routes = [
-  { path: '',component:AdminAuthComponent},
+  { path: '',component:UserAuthComponent},
   
   
 ];

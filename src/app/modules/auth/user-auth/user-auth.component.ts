@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAuthComponent implements OnInit {
 
-  constructor() { }
+  fullName:any;
+  email:any;
+  constructor() {
+    this.email="";
+    this.fullName="";
+   }
 
   ngOnInit(): void {
   }
-
+  SignIn(){
+    var data={
+      "name":this.fullName,
+      "email":this.email
+    }
+    console.log(data)
+  }
 }

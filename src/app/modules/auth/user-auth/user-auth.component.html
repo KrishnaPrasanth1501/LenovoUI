@@ -1,1 +1,14 @@
-<p>user-auth works!</p>
+<div class="row">
+    <div class="col-md-6">
+    <div class="form-group">
+        <label for="fullnm" >Full Name:</label>
+        <input type="text"  class="form-control" id="fullnm" [(ngModel)]="fullName">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="email">
+    </div>
+    <button type="button" class="btn btn-success" (click)="SignIn()">SignIn</button>
+    </div>
+</div>
+
