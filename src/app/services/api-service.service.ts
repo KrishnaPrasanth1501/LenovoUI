@@ -11,8 +11,9 @@ export class ApiService {
   public apiUrl = environment.apiEndpoint;
 
   // most viewd/recentely added | suggestions | search results | details
-  user_signIn = `${this.apiUrl}t1/auth/authentication`;
-
+  adminlogin = `${this.apiUrl}/auth/adminlogin`;
+  countonlineusers = `${this.apiUrl}/count/countonlineusers`;
+  getusers=`${this.apiUrl}/count/getusers`;
   constructor(private http: HttpClient) { }
 
   post(url: string, data: any): Observable<any> {
@@ -26,9 +27,8 @@ export class ApiService {
   }
 
   get(url: string): Observable<any> {
-
+    var auth_token=localStorage.getItem('token')
     return this.http.get(url);
-    
   }
   loggedIn(){
     return !!localStorage.getItem('token');

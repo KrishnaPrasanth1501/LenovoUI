@@ -4,8 +4,7 @@
 export const environment = {
   production: false,
   apiURL: 'productionApi',
- // apiEndpoint:  'https://smartcitydataapi.gathi.in/api/'
-  apiEndpoint:  'http://localhost:6060/api/'
+ apiEndpoint:  'http://143.110.179.3:6060/api/t1'
 };
 
 /*

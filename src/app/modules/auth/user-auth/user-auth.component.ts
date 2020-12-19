@@ -25,7 +25,7 @@ export class UserAuthComponent implements OnInit {
       "username":this.fullName,
       "email":this.email
     }
-    this.service.post(this.service.user_signIn,data).subscribe(res=>{
+    this.service.post(this.service.adminlogin,data).subscribe(res=>{
       console.log(res.token)
       localStorage.setItem('token',res.token);
       this.router.navigate(['home'])

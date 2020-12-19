@@ -17,16 +17,16 @@ export class AdminAuthComponent implements OnInit {
    }
    
   ngOnInit(): void {
-    if(!!localStorage.getItem('adminToken')){
+    if(!!localStorage.getItem('token')){
       this.router.navigate(['dashboard'])
     }
   }
   SignIn(){
     var data={
-      "username":this.username,
-      "email":this.password
+      "email":this.username,
+      "password":this.password
     }
-    this.service.post(this.service.user_signIn,data).subscribe(res=>{
+    this.service.post(this.service.adminlogin,data).subscribe(res=>{
       console.log(res.token)
       localStorage.setItem('token',res.token);
       this.router.navigate(['/dashboard'])
