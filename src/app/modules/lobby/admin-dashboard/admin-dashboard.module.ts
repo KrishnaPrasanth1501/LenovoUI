@@ -7,11 +7,12 @@ import { UserBasedAnalyticsComponent } from './user-based-analytics/user-based-a
 import { ListOfCountriesComponent } from './list-of-countries/list-of-countries.component';
 import { SideNavComponent } from './common/side-nav/side-nav.component';
 import { FormsModule } from '@angular/forms';
+import { CountriesComponent } from './countries/countries.component';
 
 
 
 @NgModule({
-  declarations: [LiveUsersComponent, PostEventAnalyticsComponent, UserBasedAnalyticsComponent, ListOfCountriesComponent, SideNavComponent],
+  declarations: [LiveUsersComponent, PostEventAnalyticsComponent, UserBasedAnalyticsComponent, ListOfCountriesComponent, SideNavComponent, CountriesComponent],
   imports: [
     CommonModule,
     AdminDashboardRoutingModule,

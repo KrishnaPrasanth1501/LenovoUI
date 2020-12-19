@@ -7,12 +7,14 @@ import { AdminDashboardModule } from './modules/lobby/admin-dashboard/admin-dash
 import { ApiService } from './services/api-service.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './services/auth.guard';
+import { CountriesComponent } from './lobby/admin-dashboard/countries/countries.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,

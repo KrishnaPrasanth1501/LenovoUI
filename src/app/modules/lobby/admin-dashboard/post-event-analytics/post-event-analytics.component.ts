@@ -10,12 +10,14 @@ export class PostEventAnalyticsComponent implements OnInit {
   totalusercount:any;
   totalbuttonclicks:any;
   overallPageCount:any;
+  countrytotalusers: any;
   constructor(private service:ApiService) { }
 
   ngOnInit(): void {
     this.totalusers();
     this.getuserspoints();
     this.totalPageviews();
+    this.countuserpercountry();
   }
   getuserspoints(){
     this.service.get(this.service.getuserspoints).subscribe(res=>{
@@ -29,6 +31,17 @@ export class PostEventAnalyticsComponent implements OnInit {
     this.service.get(this.service.totalusers).subscribe(
       res=>{
         this.totalusercount=res
+        console.log(res)
+      },
+      err=>{
+        console.log(err)
+      }
+      )
+  }
+  countuserpercountry(){
+    this.service.get(this.service.countuserpercountry).subscribe(
+      res=>{
+        this.countrytotalusers=res.details
         console.log(res)
       },
       err=>{

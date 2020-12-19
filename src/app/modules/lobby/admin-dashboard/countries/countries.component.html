@@ -1,0 +1,32 @@
+<section class="pagebox">
+    <app-side-nav></app-side-nav>    
+    <div class="mainbox">
+        <div class="maininner">
+          <div class="titlebox">
+            <div class="titlebar"><h1 class="titlename">Number of countries</h1></div>
+           
+          </div>
+          
+          <div class="cards itemrow">
+            <div class="headerbar">
+              <div class="orderitem w-50">Country Name</div>
+             
+              <div class="orderstatus1 w-50">Number of Persons</div>
+             
+             
+       </div>
+       <a class="gray">
+            <div class="rowbar" *ngFor="let data of countrytotalusers">
+              <div class="orderitem w-50">{{data.country}} </div>
+             
+              <div class="orderstatus1 w-50">{{data.usercount}}</div>
+              
+   </div>
+            </a>
+          </div>
+  
+          <!-- <span>Temp Ui</span>
+          <a href="viewbrand.html" class="templink">view Brand</a> -->
+        </div>
+      </div>
+  </section>

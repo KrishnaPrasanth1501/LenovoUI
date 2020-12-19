@@ -6,6 +6,7 @@ import { LiveUsersComponent } from './live-users/live-users.component';
 import { PostEventAnalyticsComponent } from './post-event-analytics/post-event-analytics.component';
 import { UserBasedAnalyticsComponent } from './user-based-analytics/user-based-analytics.component';
 import { AuthGuard } from 'src/app/services/auth.guard';
+import { CountriesComponent } from './countries/countries.component';
 const routes: Routes = [
   {
     path:'',
@@ -16,6 +17,11 @@ const routes: Routes = [
   path:'liveUsers',
   component:LiveUsersComponent,
   canActivate:[AuthGuard]
+  },
+  {
+    path:"listcountries",
+    component:CountriesComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'postevents',
