@@ -14,6 +14,9 @@ export class ApiService {
   adminlogin = `${this.apiUrl}/auth/adminlogin`;
   countonlineusers = `${this.apiUrl}/count/countonlineusers`;
   getusers=`${this.apiUrl}/count/getusers`;
+  totalusers=`${this.apiUrl}/count/totalusers`;
+  getuserspoints=`${this.apiUrl}/count/getuserspoints`;
+  countuserpages=`${this.apiUrl}/count/countuserspages`;
   constructor(private http: HttpClient) { }
 
   post(url: string, data: any): Observable<any> {

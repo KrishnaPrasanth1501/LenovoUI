@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api-service.service';
 })
 export class LiveUsersComponent implements OnInit {
 listonlineusers:any;
-onlineusercount:any;
+onlineusercount:any=0;
   constructor(private service:ApiService) { }
 
   ngOnInit(): void {
@@ -18,7 +18,8 @@ onlineusercount:any;
   getusers(){
     this.service.get(this.service.getusers).subscribe(res=>{
       this.listonlineusers=res.details
-      console.log(res.details)
+      console.log(res.details.length)
+      this.onlineusercount=res.details.length
     },err=>{
       console.log(err)
     })
