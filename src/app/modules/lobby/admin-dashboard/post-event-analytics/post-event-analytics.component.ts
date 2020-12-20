@@ -11,6 +11,7 @@ export class PostEventAnalyticsComponent implements OnInit {
   totalbuttonclicks:any;
   overallPageCount:any;
   countrytotalusers: any;
+  totalloggedtime: number=0;
   constructor(private service:ApiService) { }
 
   ngOnInit(): void {
@@ -18,7 +19,37 @@ export class PostEventAnalyticsComponent implements OnInit {
     this.getuserspoints();
     this.totalPageviews();
     this.countuserpercountry();
+    this.authusertimespent()
   }
+  authusertimespent(){
+    this.service.get(this.service.authusertimespent).subscribe(
+      res=>{
+        
+        console.log(res)
+        this.totalloggedtime=0
+        for(let i of res.details){
+          // console.log(parseInt(i.logintime)-parseInt(i.logouttime))
+          if(i.logintime!=null && i.logouttime!=null){
+            console.log()
+            this.totalloggedtime+=this.diff(i.logintime,i.logouttime)
+          }
+          
+        }
+      },err=>{
+        console.log(err)
+      })   
+  }
+  diff(start:any, end:any) {
+  var date1=new Date(start)
+  var date2=new Date(end)
+// console.log(date1)
+// console.log(date2)
+var diff_in_time=date2.getTime()-date1.getTime()
+console.log(diff_in_time)
+var diff_in_days=diff_in_time/(1000*3600)
+
+  return diff_in_days
+}
   getuserspoints(){
     this.service.get(this.service.getuserspoints).subscribe(res=>{
       console.log(res)

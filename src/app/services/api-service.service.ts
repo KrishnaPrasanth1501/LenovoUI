@@ -18,6 +18,9 @@ export class ApiService {
   getuserspoints=`${this.apiUrl}/count/getuserspoints`;
   countuserpages=`${this.apiUrl}/count/countuserspages`;
   countuserpercountry=`${this.apiUrl}/count/countuserpercountry`;
+  getuserbuttonpoints=`${this.apiUrl}/count/getuserbuttonpoints`;
+  authusertimespent=`${this.apiUrl}/auth/usertimespent`;
+  userbasedanalytics=`${this.apiUrl}/count/userbasedanalytics`;
   constructor(private http: HttpClient) { }
 
   post(url: string, data: any): Observable<any> {

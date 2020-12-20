@@ -8,7 +8,7 @@ import { ListOfCountriesComponent } from './list-of-countries/list-of-countries.
 import { SideNavComponent } from './common/side-nav/side-nav.component';
 import { FormsModule } from '@angular/forms';
 import { CountriesComponent } from './countries/countries.component';
-
+// import { BrowserModule } from '@angular/platform-browser'
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { CountriesComponent } from './countries/countries.component';
   imports: [
     CommonModule,
     AdminDashboardRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   exports:[SideNavComponent]
 })
